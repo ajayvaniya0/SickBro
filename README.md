@@ -1,4 +1,4 @@
-# Wellbuddy
+# SickBro
 
 A personal health awareness coach built with React, TypeScript, and Google Gemini AI. Aligned with UN SDG 3: Good Health and Well-Being.
 
