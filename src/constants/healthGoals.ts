@@ -1,0 +1,58 @@
+import type { HealthGoal } from '../types/chat';
+
+export const HEALTH_GOALS: HealthGoal[] = [
+  {
+    id: 'sleep',
+    title: 'Better Sleep',
+    emoji: '😴',
+    tagline: 'Build restful nights & consistent sleep cycles',
+    initialPrompt: 'I want to improve my sleep.',
+    gradient: 'from-indigo-500/10 via-purple-500/10 to-blue-500/10',
+    accentColor: 'text-indigo-600 dark:text-indigo-400 border-indigo-200 dark:border-indigo-900/50',
+  },
+  {
+    id: 'nutrition',
+    title: 'Nutrition',
+    emoji: '🥗',
+    tagline: 'Nourish your body with balanced, mindful choices',
+    initialPrompt: 'I want to improve my nutrition and eating habits.',
+    gradient: 'from-emerald-500/10 via-teal-500/10 to-green-500/10',
+    accentColor: 'text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-900/50',
+  },
+  {
+    id: 'activity',
+    title: 'Physical Activity',
+    emoji: '🏃',
+    tagline: 'Energize your day with sustainable movement',
+    initialPrompt: 'I want to be more physically active.',
+    gradient: 'from-amber-500/10 via-orange-500/10 to-red-500/10',
+    accentColor: 'text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-900/50',
+  },
+  {
+    id: 'hydration',
+    title: 'Hydration',
+    emoji: '💧',
+    tagline: 'Stay refreshed, sharp, and properly hydrated',
+    initialPrompt: 'I want to build a better daily hydration routine.',
+    gradient: 'from-cyan-500/10 via-sky-500/10 to-blue-500/10',
+    accentColor: 'text-cyan-600 dark:text-cyan-400 border-cyan-200 dark:border-cyan-900/50',
+  },
+  {
+    id: 'wellbeing',
+    title: 'Well-being',
+    emoji: '🧘',
+    tagline: 'Decompress, reduce stress & cultivate balance',
+    initialPrompt: 'I want to manage stress and boost my mental well-being.',
+    gradient: 'from-rose-500/10 via-pink-500/10 to-purple-500/10',
+    accentColor: 'text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-900/50',
+  },
+  {
+    id: 'habits',
+    title: 'Healthy Habits',
+    emoji: '🌱',
+    tagline: 'Craft small, atomic routines that actually stick',
+    initialPrompt: 'I want to build positive daily health habits that last.',
+    gradient: 'from-teal-500/10 via-emerald-500/10 to-lime-500/10',
+    accentColor: 'text-teal-600 dark:text-teal-400 border-teal-200 dark:border-teal-900/50',
+  },
+];
