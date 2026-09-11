@@ -1,75 +1,107 @@
-# React + TypeScript + Vite
+# Wellbuddy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal health awareness coach built with React, TypeScript, and Google Gemini AI. Aligned with UN SDG 3: Good Health and Well-Being.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **AI Health Coach**: Chat with an intelligent assistant for personalized health guidance
+- **Goal-Based Plans**: Select from predefined health goals to generate actionable 7-day plans
+- **Safe & Non-Diagnostic**: Built with safety guardrails — never provides medical diagnoses
+- **Responsive Design**: Works seamlessly on desktop and mobile
+- **Dark Mode**: Automatic dark/light theme support
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19, TypeScript, Vite, TailwindCSS v4
+- **Backend**: Express.js, TypeScript (tsx)
+- **AI**: Google Gemini API (`@google/genai`)
+- **Icons**: Lucide React
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js 18+
+- Google Gemini API key
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd wellbuddy
 
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Add your GEMINI_API_KEY to .env
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Start frontend (Vite dev server)
+npm run dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start backend (Express server with hot reload)
+npm run server:dev
+
+# Run both together (in separate terminals)
+npm run dev && npm run server:dev
+```
+
+### Build
+
+```bash
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Linting
+
+```bash
+npm run lint
+```
+
+## Project Structure
 
 ```
+wellbuddy/
+├── src/                    # Frontend source
+│   ├── components/         # React components
+│   ├── services/           # API services
+│   ├── types/              # TypeScript types
+│   ├── constants/          # App constants
+│   ├── App.tsx             # Main app component
+│   └── main.tsx            # Entry point
+├── server/                 # Backend source
+│   └── src/
+│       ├── index.ts        # Express server entry
+│       ├── services/       # Backend services
+│       ├── prompts/        # AI prompts
+│       └── safety/         # Safety guardrails
+├── public/                 # Static assets
+└── dist/                   # Production build output
+```
+
+## Environment Variables
+
+Create a `.env` file with:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+PORT=3001                    # Optional: backend port
+```
+
+## Safety
+
+This application is designed for health awareness and education only. It does **not** provide medical diagnoses, treatment recommendations, or replace professional medical advice. Always consult healthcare professionals for medical concerns.
+
+## License
+
+MIT
